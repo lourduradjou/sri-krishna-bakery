@@ -127,3 +127,40 @@
     @apply font-sans;
     }
 }
+
+/* Theme Tokens */
+@theme {
+  --color-background: #fffaf5;
+  --color-foreground: #2f2a25;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #2f2a25;
+
+  --color-primary: #9b5d3f;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #f3e5d3;
+  --color-secondary-foreground: #4b3a2f;
+
+  --color-muted: #f7efe6;
+  --color-muted-foreground: #6b5b4d;
+
+  --color-accent: #e9c46a;
+  --color-accent-foreground: #2f2a25;
+
+  --color-border: #e8dccf;
+  --color-input: #e8dccf;
+  --color-ring: #9b5d3f;
+
+  --radius: 1rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  min-height: 100vh;
+}

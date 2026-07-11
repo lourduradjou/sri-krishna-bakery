@@ -1,23 +1,17 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+import AboutPreview from "@/components/home/about-preview";
+import Categories from "@/components/home/categories";
+import GalleryPreview from "@/components/home/gallery-preview";
+import Hero from "@/components/home/hero";
+import WhyChooseUs from "@/components/home/why-choose-us";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <Card className="max-w-sm">
-      <CardHeader>
-        <CardTitle>Project Overview</CardTitle>
-        <CardDescription>
-          Track progress and recent activity for your Next.js app.
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        Your design system is ready. Start building your next component.
-      </CardContent>
-    </Card>
-  )
+    <>
+      <Hero />
+      <Categories />
+      <WhyChooseUs />
+      <AboutPreview />
+      <GalleryPreview />
+    </>
+  );
 }

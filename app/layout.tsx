@@ -1,15 +1,22 @@
-import { Geist, Geist_Mono, Figtree } from "next/font/google"
+import type { Metadata } from "next"
+import { Poppins } from "next/font/google"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
 
-const figtree = Figtree({subsets:['latin'],variable:'--font-sans'})
+import Navbar from "@/components/layout/navbar"
+import Footer from "@/components/layout/footer"
 
-const fontMono = Geist_Mono({
+const poppins = Poppins({
   subsets: ["latin"],
-  variable: "--font-mono",
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
 })
+
+export const metadata: Metadata = {
+  title: "Sri Krishna Bakery",
+  description:
+    "Freshly baked cakes, breads, pastries and snacks made with love every day.",
+}
 
 export default function RootLayout({
   children,
@@ -17,13 +24,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", figtree.variable)}
-    >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${poppins.variable} bg-background text-foreground antialiased`}
+      >
+        <Navbar />
+
+        <main className="pt-20">{children}</main>
+
+        <Footer />
       </body>
     </html>
   )
